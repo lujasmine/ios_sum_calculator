@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		903CD3041D53FF6200FBDD19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903CD3021D53FF6200FBDD19 /* Main.storyboard */; };
 		90A9FD851D5266BF004AE453 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9FD841D5266BF004AE453 /* AppDelegate.swift */; };
 		90A9FD871D5266BF004AE453 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9FD861D5266BF004AE453 /* ViewController.swift */; };
 		90A9FDB31D529B4D004AE453 /* tableViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A9FDB21D529B4D004AE453 /* tableViewFile.swift */; };
+		90B557A41D5405010075E3E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B557A21D5405010075E3E8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		903CD3031D53FF6200FBDD19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SumCalculator/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90A9FD811D5266BF004AE453 /* SumCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SumCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		90A9FD841D5266BF004AE453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/jasminelu/Desktop/SumCalculator/SumCalculator/AppDelegate.swift; sourceTree = "<absolute>"; };
-		90A9FD861D5266BF004AE453 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = /Users/jasminelu/Desktop/SumCalculator/SumCalculator/ViewController.swift; sourceTree = "<absolute>"; };
+		90A9FD841D5266BF004AE453 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/jasminelu/Desktop/ios_sum_calculator/SumCalculator/AppDelegate.swift; sourceTree = "<absolute>"; };
+		90A9FD861D5266BF004AE453 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = /Users/jasminelu/Desktop/ios_sum_calculator/SumCalculator/ViewController.swift; sourceTree = "<absolute>"; };
 		90A9FD8B1D5266BF004AE453 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SumCalculator/Assets.xcassets; sourceTree = "<group>"; };
 		90A9FD901D5266BF004AE453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = SumCalculator/Info.plist; sourceTree = "<group>"; };
-		90A9FDB21D529B4D004AE453 /* tableViewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = tableViewFile.swift; path = /Users/jasminelu/Desktop/SumCalculator/SumCalculator/tableViewFile.swift; sourceTree = "<absolute>"; };
+		90A9FDB21D529B4D004AE453 /* tableViewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = tableViewFile.swift; path = /Users/jasminelu/Desktop/ios_sum_calculator/SumCalculator/tableViewFile.swift; sourceTree = "<absolute>"; };
+		90B557A31D5405010075E3E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SumCalculator/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 				90A9FD841D5266BF004AE453 /* AppDelegate.swift */,
 				90A9FD861D5266BF004AE453 /* ViewController.swift */,
 				90A9FD8B1D5266BF004AE453 /* Assets.xcassets */,
-				903CD3021D53FF6200FBDD19 /* Main.storyboard */,
+				90B557A21D5405010075E3E8 /* Main.storyboard */,
 				90A9FD901D5266BF004AE453 /* Info.plist */,
 				90A9FDB21D529B4D004AE453 /* tableViewFile.swift */,
 			);
@@ -123,7 +123,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903CD3041D53FF6200FBDD19 /* Main.storyboard in Resources */,
+				90B557A41D5405010075E3E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,13 +143,13 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		903CD3021D53FF6200FBDD19 /* Main.storyboard */ = {
+		90B557A21D5405010075E3E8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				903CD3031D53FF6200FBDD19 /* Base */,
+				90B557A31D5405010075E3E8 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../../SumCalculator;
+			path = ../../ios_sum_calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
