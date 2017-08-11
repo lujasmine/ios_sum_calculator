@@ -42,26 +42,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView_2.dataSource = self
         
         first.backgroundColor = UIColor(red: 71/255, green: 178/255, blue: 245/255, alpha: 1.0)
-        second.backgroundColor = UIColor.whiteColor()
+        second.backgroundColor = UIColor.white
         
         total1.text = String(format:"%.2f", firstTotal)
         total2.text = String(format:"%.2f", secondTotal)
     
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rows1 = firstArray.count
         let rows2 = secondArray.count
         return (tableView == self.tableView_1) ? rows1 : rows2
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == self.tableView_1 {
-            let cell: classTableView_1 = tableView.dequeueReusableCellWithIdentifier("cellTableView_1") as! classTableView_1
+            let cell: classTableView_1 = tableView.dequeueReusableCell(withIdentifier: "cellTableView_1") as! classTableView_1
             cell.label_text.text = "\(indexPath.row + 1):     \(String(format:"%.2f", firstArray[indexPath.row]))"
             return cell
         } else {
-            let cell: classTableView_2 = tableView.dequeueReusableCellWithIdentifier("cellTableView_2") as! classTableView_2
+            let cell: classTableView_2 = tableView.dequeueReusableCell(withIdentifier: "cellTableView_2") as! classTableView_2
             cell.label_text.text = "\(indexPath.row + 1):     \(String(format:"%.2f", secondArray[indexPath.row]))"
             return cell
         }
@@ -72,13 +72,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func clearCalculations(sender: AnyObject) {
+    @IBAction func clearCalculations(_ sender: AnyObject) {
         calcDisplay.text = ""
         firstValue = true
         decimal = 0
     }
     
-    @IBAction func clear1(sender: AnyObject) {
+    @IBAction func clear1(_ sender: AnyObject) {
         
         firstArray = [Float]()
         firstTotal = 0
@@ -88,7 +88,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView_1.reloadData()
     }
     
-    @IBAction func clear2(sender: AnyObject) {
+    @IBAction func clear2(_ sender: AnyObject) {
         
         secondArray = [Float]()
         secondTotal = 0
@@ -98,7 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView_2.reloadData()
     }
     
-    @IBAction func pressZero(sender: AnyObject) {
+    @IBAction func pressZero(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "0"
         } else {
@@ -106,13 +106,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressEquals(sender: AnyObject) {
+    @IBAction func pressEquals(_ sender: AnyObject) {
     }
     
-    @IBAction func pressPlus(sender: AnyObject) {
-        //TODO
-        //add to array
-        print(calcDisplay.text)
+    @IBAction func pressPlus(_ sender: AnyObject) {
         if calcDisplay.text == "" {
             
         } else {
@@ -124,13 +121,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 tableView_1.reloadData()
             } else {
                 if (secondArray.count + 1) > firstArray.count {
-                    let alertController = UIAlertController(title: "Error", message: "Too Many", preferredStyle: .Alert)
-                    let ok = UIAlertAction(title: "Ok", style: .Default) {(action) in
+                    let alertController = UIAlertController(title: "Error", message: "Too Many", preferredStyle: .alert)
+                    let ok = UIAlertAction(title: "Ok", style: .default) {(action) in
                         self.resignFirstResponder()
                     }
                     
                     alertController.addAction(ok)
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    self.present(alertController, animated: true, completion: nil)
                 } else {
                     if Float(calcDisplay.text!)! == firstArray[secondArray.count] {
                         secondArray.append(Float(calcDisplay.text!)!)
@@ -139,12 +136,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         calcDisplay.text = ""
                         tableView_2.reloadData()
                     } else {
-                        let alertView = UIAlertController(title: "Did not Match", message: "Check Value", preferredStyle: .Alert)
+                        let alertView = UIAlertController(title: "Did not Match", message: "Check Value", preferredStyle: .alert)
                         
-                        let checkOption = UIAlertAction(title: "Check", style: .Default) {(action) in
+                        let checkOption = UIAlertAction(title: "Check", style: .default) {(action) in
                             
                         }
-                        let continueOption = UIAlertAction(title: "Continue", style: .Default) {(action) in
+                        let continueOption = UIAlertAction(title: "Continue", style: .default) {(action) in
                             self.secondArray.append(Float(self.calcDisplay.text!)!)
                             self.secondTotal += Float(self.calcDisplay.text!)!
                             self.total2.text = String(format:"%.2f", self.secondTotal)
@@ -155,7 +152,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                         alertView.addAction(checkOption)
                         alertView.addAction(continueOption)
                         
-                        self.presentViewController(alertView, animated: true, completion: nil)
+                        self.present(alertView, animated: true, completion: nil)
                     }
                 }
                 
@@ -165,11 +162,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    @IBAction func clearAll(sender: AnyObject) {
+    @IBAction func clearAll(_ sender: AnyObject) {
         //TODO clear both arrays
         //alert view to confirm
         first.backgroundColor = UIColor(red: 71/255, green: 178/255, blue: 245/255, alpha: 1.0)
-        second.backgroundColor = UIColor.whiteColor()
+        second.backgroundColor = UIColor.white
         firstValue = true
         decimal = 0
         firstArray = [Float]()
@@ -187,21 +184,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView_2.reloadData()
     }
     
-    @IBAction func firstTime(sender: AnyObject) {
+    @IBAction func firstTime(_ sender: AnyObject) {
         //clear first array
         first.backgroundColor = UIColor(red: 71/255, green: 178/255, blue: 245/255, alpha: 1.0)
-        second.backgroundColor = UIColor.whiteColor()
+        second.backgroundColor = UIColor.white
         firstCalc = true
     }
     
-    @IBAction func secondTime(sender: AnyObject) {
+    @IBAction func secondTime(_ sender: AnyObject) {
         //clear second array
         second.backgroundColor = UIColor(red: 71/255, green: 178/255, blue: 245/255, alpha: 1.0)
-        first.backgroundColor = UIColor.whiteColor()
+        first.backgroundColor = UIColor.white
         firstCalc = false
     }
     
-    @IBAction func pressBack(sender: AnyObject) {
+    @IBAction func pressBack(_ sender: AnyObject) {
         if calcDisplay.text == "" {
             
         } else {
@@ -211,7 +208,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressOne(sender: AnyObject) {
+    @IBAction func pressOne(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "1"
             firstValue = false
@@ -220,7 +217,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressTwo(sender: AnyObject) {
+    @IBAction func pressTwo(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "2"
             firstValue = false
@@ -229,7 +226,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressThree(sender: AnyObject) {
+    @IBAction func pressThree(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "3"
             firstValue = false
@@ -238,7 +235,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressFour(sender: AnyObject) {
+    @IBAction func pressFour(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "4"
             firstValue = false
@@ -247,7 +244,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressFive(sender: AnyObject) {
+    @IBAction func pressFive(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "5"
             firstValue = false
@@ -256,7 +253,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressSix(sender: AnyObject) {
+    @IBAction func pressSix(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "6"
             firstValue = false
@@ -265,7 +262,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressSeven(sender: AnyObject) {
+    @IBAction func pressSeven(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "7"
             firstValue = false
@@ -274,7 +271,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressEight(sender: AnyObject) {
+    @IBAction func pressEight(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "8"
             firstValue = false
@@ -283,7 +280,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressNine(sender: AnyObject) {
+    @IBAction func pressNine(_ sender: AnyObject) {
         if firstValue {
             calcDisplay.text = "9"
             firstValue = false
@@ -292,7 +289,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    @IBAction func pressDot(sender: AnyObject) {
+    @IBAction func pressDot(_ sender: AnyObject) {
         if (decimal == 0) {
             calcDisplay.text = calcDisplay.text! + "."
             decimal = 1
