@@ -203,7 +203,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         } else {
             let str: String = calcDisplay.text!
-            let truncated = String(str.characters.dropLast())
+            let truncated = String(str.dropLast())
             calcDisplay.text = truncated
         }
     }
